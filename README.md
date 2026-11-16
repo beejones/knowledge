@@ -68,6 +68,24 @@ http://127.0.0.1:8000
 
 This automatically rebuilds the site when you edit Markdown files.
 
+### Preview in a container
+
+If you do not want to install Python or the MkDocs dependencies locally, run
+MkDocs in Docker from the project root:
+
+```bash
+docker run --rm -it \
+  -p 8000:8000 \
+  -v "$PWD:/docs" \
+  -w /docs \
+  python:3.12-slim \
+  sh -c 'pip install --no-cache-dir -r requirements.txt && mkdocs serve --dev-addr=0.0.0.0:8000'
+```
+
+Open [http://localhost:8000](http://localhost:8000) in your browser. The
+project directory is mounted into the container, so changes to Markdown files
+are picked up automatically. Stop the preview with `Ctrl+C`.
+
 ---
 
 ## 🏗️ Build the Static Site
