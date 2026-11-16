@@ -1,0 +1,1844 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An assembly of knowledge assembled by Beejones">
+      
+      
+        <meta name="author" content="Beejones">
+      
+      
+      
+        <link rel="prev" href="../../battery/Phase-Change-Battery%20/">
+      
+      
+        <link rel="next" href="../../../health/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Home battery - Beejones Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-proposed-system-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Beejones Knowledge Base" class="md-header__button md-logo" aria-label="Beejones Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beejones Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home battery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Beejones Knowledge Base" class="md-nav__button md-logo" aria-label="Beejones Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Beejones Knowledge Base
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to the Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../computers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../computers/linux/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../computers/linux/bash/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bash
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bash
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computers/linux/bash/kill-many-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminate Optimizer Worker Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../battery/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Battery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../battery/Graphene-Supercapacitors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene Supercapacitors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../battery/Phase-Change-Battery%20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase-Change Battery Explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home battery
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home battery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#electrical-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrical architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../health/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Health
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../health/peptides/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptides
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/peptides/BPC-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC 157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/peptides/GHK-Cu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GHK Cu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/peptides/SS-31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SS 31
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/peptides/TB-500/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TB 500
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/peptides/wat%20zijn%20peptides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wat zijn peptides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#electrical-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrical architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Excellent. I would build this as a <strong>modular 48V LiFePO4 home backup system</strong>, inspired by Will Prowse's design, but adapted to European electrical standards and Belgian regulations.</p>
+<p>The idea is to start with approximately 10kWh of battery storage, have automatic switching when the electricity fails, and make it possible to expand to 20–30kWh without replacing the original equipment.</p>
+<p>I would also prepare the installation for solar panels at a later stage, even though we won't install them initially.</p>
+<h1 id="1-proposed-system-architecture">1. Proposed system architecture<a class="headerlink" href="#1-proposed-system-architecture" title="Permanent link">¶</a></h1>
+<p>My recommendation is to use components from Victron Energy and Pylontech.</p>
+<p>Why?</p>
+<ul>
+<li>Modular architecture.</li>
+<li>Good compatibility between inverter and batteries.</li>
+<li>Excellent monitoring capabilities.</li>
+<li>Expandable battery capacity.</li>
+<li>European 230V/50Hz equipment.</li>
+<li>Established ecosystem and technical documentation.</li>
+</ul>
+<p>Here is the architecture I propose:</p>
+<h3 id="electrical-architecture">Electrical architecture<a class="headerlink" href="#electrical-architecture" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>                  BELGIAN ELECTRICITY GRID
+                            |
+                            |
+                      Main Distribution
+                            |
+                            |
+                     AC INPUT PROTECTION
+                            |
+                            |
+                   +--------------------+
+                   |                    |
+                   |   VICTRON          |
+                   |   MULTIPLUS-II     |
+                   |   48V / 5000VA     |
+                   |                    |
+                   +---------+----------+
+                             |
+                             |
+                       AC OUTPUT
+                             |
+                             |
+                    BACKUP DISTRIBUTION
+                             |
+                  +----------+----------+
+                  |          |          |
+                  |          |          |
+                Lights    Fridge      Router
+                  |          |          |
+                  +----------+----------+
+                             |
+                             |
+                      48V DC BATTERY
+                             |
+                     DC FUSE / ISOLATOR
+                             |
+                   +---------+---------+
+                   |                   |
+              PYLONTECH 1         PYLONTECH 2
+                4.8kWh              4.8kWh
+                   |                   |
+                   +---------+---------+
+                             |
+                       BATTERY BUSBAR
+</code></pre></div>
+<p>The important feature is that the inverter acts as both:</p>
+<ol>
+<li>An inverter, converting battery DC into 230V AC.</li>
+<li>A battery charger, charging the batteries from the electricity grid.</li>
+</ol>
+<p>It also contains an automatic transfer switch.</p>
+<p>When the grid fails, the inverter switches to battery operation.</p>
+<p>When the grid returns, it switches back and can recharge the batteries.</p>
+<p>This is precisely what we want.</p>
+<hr>
+<h1 id="2-battery-storage-approximately-10kwh">2. Battery storage: approximately 10kWh<a class="headerlink" href="#2-battery-storage-approximately-10kwh" title="Permanent link">¶</a></h1>
+<p>I recommend starting with two Pylontech US5000 batteries.</p>
+<h2 id="pylontech-us5000">Pylontech US5000<a class="headerlink" href="#pylontech-us5000" title="Permanent link">¶</a></h2>
+<p>Technical specifications:</p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battery chemistry</td>
+<td style="text-align: right;">LiFePO4</td>
+</tr>
+<tr>
+<td>Nominal voltage</td>
+<td style="text-align: right;">48V</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td style="text-align: right;">100Ah</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td style="text-align: right;">4.8kWh</td>
+</tr>
+<tr>
+<td>Usable energy</td>
+<td style="text-align: right;">4.56kWh</td>
+</tr>
+<tr>
+<td>Continuous charge/discharge</td>
+<td style="text-align: right;">100A</td>
+</tr>
+<tr>
+<td>Maximum discharge</td>
+<td style="text-align: right;">120A for 15 minutes</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td style="text-align: right;">39.7kg</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td style="text-align: right;">CAN / RS485</td>
+</tr>
+<tr>
+<td>Cycle life</td>
+<td style="text-align: right;">&gt;8,000 cycles</td>
+</tr>
+</tbody>
+</table>
+<p>Source: Pylontech manufacturer specifications. <a href="https://en.pylontech.com.cn/products/c23/134.html?utm_source=chatgpt.com">en.pylontech.com.cn</a></p>
+<p>Two batteries provide:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th style="text-align: right;">Capacity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battery 1</td>
+<td style="text-align: right;">4.8kWh</td>
+</tr>
+<tr>
+<td>Battery 2</td>
+<td style="text-align: right;">4.8kWh</td>
+</tr>
+<tr>
+<td>Total nominal</td>
+<td style="text-align: right;">9.6kWh</td>
+</tr>
+<tr>
+<td>Total usable</td>
+<td style="text-align: right;">9.12kWh</td>
+</tr>
+</tbody>
+</table>
+<p>This is a good starting point.</p>
+<h3 id="future-expansion">Future expansion<a class="headerlink" href="#future-expansion" title="Permanent link">¶</a></h3>
+<p>One advantage of this system is that you can add more batteries.</p>
+<table>
+<thead>
+<tr>
+<th>Number of batteries</th>
+<th style="text-align: right;">Nominal capacity</th>
+<th style="text-align: right;">Usable capacity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td style="text-align: right;">9.6kWh</td>
+<td style="text-align: right;">9.12kWh</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">14.4kWh</td>
+<td style="text-align: right;">13.68kWh</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: right;">19.2kWh</td>
+<td style="text-align: right;">18.24kWh</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: right;">24kWh</td>
+<td style="text-align: right;">22.8kWh</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: right;">28.8kWh</td>
+<td style="text-align: right;">27.36kWh</td>
+</tr>
+</tbody>
+</table>
+<p>Pylontech specifies support for up to 16 modules in a single string, subject to the installation requirements.</p>
+<p>My suggestion is to install a battery rack that can accommodate at least six batteries from the beginning.</p>
+<p>That avoids rebuilding the installation later.</p>
+<hr>
+<h1 id="3-inverter-victron-multiplus-ii">3. Inverter: Victron MultiPlus-II<a class="headerlink" href="#3-inverter-victron-multiplus-ii" title="Permanent link">¶</a></h1>
+<p>This is the central component.</p>
+<p>I recommend:</p>
+<p><strong>Victron MultiPlus-II 48/5000/70-50 230V</strong></p>
+<p>Specifications:</p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battery voltage</td>
+<td style="text-align: right;">48V</td>
+</tr>
+<tr>
+<td>AC output</td>
+<td style="text-align: right;">230V</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td style="text-align: right;">50Hz</td>
+</tr>
+<tr>
+<td>Apparent power</td>
+<td style="text-align: right;">5000VA</td>
+</tr>
+<tr>
+<td>Continuous active power</td>
+<td style="text-align: right;">4000W</td>
+</tr>
+<tr>
+<td>Peak power</td>
+<td style="text-align: right;">9000W</td>
+</tr>
+<tr>
+<td>Battery charging current</td>
+<td style="text-align: right;">70A</td>
+</tr>
+<tr>
+<td>Automatic transfer switch</td>
+<td style="text-align: right;">50A</td>
+</tr>
+<tr>
+<td>Maximum efficiency</td>
+<td style="text-align: right;">96%</td>
+</tr>
+</tbody>
+</table>
+<p>Source: Victron technical documentation. <a href="https://www.victronenergy.com/media/pg/MultiPlus-II_230V/en/technical-specifications-mp-ii-230v.html?utm_source=chatgpt.com">Victron Energy</a></p>
+<p>Notice something important:</p>
+<p>Although it is advertised as a 5000VA inverter, its continuous real power output is 4000W at 25°C.</p>
+<p>That is still sufficient for many essential household appliances.</p>
+<h3 id="why-this-inverter">Why this inverter?<a class="headerlink" href="#why-this-inverter" title="Permanent link">¶</a></h3>
+<p>It provides:</p>
+<ul>
+<li>Automatic switching during a power failure.</li>
+<li>Battery charging from the electricity grid.</li>
+<li>Pure sine-wave output.</li>
+<li>Configurable charging parameters.</li>
+<li>Remote monitoring.</li>
+<li>Possibility of adding solar charging equipment later.</li>
+</ul>
+<p>It also supports parallel operation and more advanced system configurations.</p>
+<p>One important Belgian consideration: the exact model, firmware and grid-connected configuration must be checked against the applicable Synergrid requirements before purchase.</p>
+<hr>
+<h1 id="4-monitoring-victron-cerbo-gx">4. Monitoring: Victron Cerbo GX<a class="headerlink" href="#4-monitoring-victron-cerbo-gx" title="Permanent link">¶</a></h1>
+<p>I would add a Cerbo GX.</p>
+<p>This allows you to monitor the complete installation.</p>
+<p>You can see:</p>
+<ul>
+<li>Battery state of charge.</li>
+<li>Remaining battery capacity.</li>
+<li>Battery voltage.</li>
+<li>Charging current.</li>
+<li>Inverter power consumption.</li>
+<li>AC input power.</li>
+<li>AC output power.</li>
+<li>System alarms.</li>
+</ul>
+<p>You can access the information through Victron's VRM monitoring portal.</p>
+<p>This is particularly useful when you are away from home.</p>
+<p>You could, for example, check whether your battery is fully charged before a forecasted storm.</p>
+<p>The Cerbo GX also provides integration possibilities with Home Assistant.</p>
+<p>Given your existing Home Assistant and Node-RED environment, this is something I would definitely implement.</p>
+<hr>
+<h1 id="5-battery-rack-and-electrical-protection">5. Battery rack and electrical protection<a class="headerlink" href="#5-battery-rack-and-electrical-protection" title="Permanent link">¶</a></h1>
+<p>I would not mount the components on a hand truck for a permanent home installation.</p>
+<p>Instead, I would use a metal battery rack.</p>
+<p>Recommended configuration:</p>
+<ul>
+<li>Six-battery-capacity rack.</li>
+<li>Two batteries initially.</li>
+<li>Room for four additional batteries.</li>
+<li>Inverter mounted separately.</li>
+<li>Proper ventilation.</li>
+<li>Protected DC distribution.</li>
+<li>Accessible emergency isolation.</li>
+</ul>
+<h3 id="protection-components">Protection components<a class="headerlink" href="#protection-components" title="Permanent link">¶</a></h3>
+<p>You will need:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC battery fuse</td>
+<td>Protects battery cables</td>
+</tr>
+<tr>
+<td>DC isolator</td>
+<td>Disconnects battery system</td>
+</tr>
+<tr>
+<td>DC busbars</td>
+<td>Distributes battery current</td>
+</tr>
+<tr>
+<td>Battery communication cables</td>
+<td>BMS communication</td>
+</tr>
+<tr>
+<td>AC input breaker</td>
+<td>Protects grid input</td>
+</tr>
+<tr>
+<td>AC output protection</td>
+<td>Protects backup circuits</td>
+</tr>
+<tr>
+<td>RCD protection</td>
+<td>Residual-current protection</td>
+</tr>
+<tr>
+<td>Earthing system</td>
+<td>Electrical safety</td>
+</tr>
+<tr>
+<td>Enclosure</td>
+<td>Protects electrical components</td>
+</tr>
+</tbody>
+</table>
+<p>The exact fuse ratings, cable cross-sections, earthing arrangement and RCD configuration must be calculated for the final installation.</p>
+<p>I would have a qualified Belgian electrician design and commission the electrical connections.</p>
+<hr>
+<h1 id="6-how-much-backup-electricity-will-you-have">6. How much backup electricity will you have?<a class="headerlink" href="#6-how-much-backup-electricity-will-you-have" title="Permanent link">¶</a></h1>
+<p>Let's assume you have 9.12kWh of usable battery energy.</p>
+<p>Allowing approximately 10% conversion losses, you have around 8.2kWh available to your appliances.</p>
+<p>Some examples:</p>
+<table>
+<thead>
+<tr>
+<th>Average consumption</th>
+<th style="text-align: right;">Approximate backup time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200W</td>
+<td style="text-align: right;">41 hours</td>
+</tr>
+<tr>
+<td>300W</td>
+<td style="text-align: right;">27 hours</td>
+</tr>
+<tr>
+<td>500W</td>
+<td style="text-align: right;">16 hours</td>
+</tr>
+<tr>
+<td>750W</td>
+<td style="text-align: right;">11 hours</td>
+</tr>
+<tr>
+<td>1000W</td>
+<td style="text-align: right;">8 hours</td>
+</tr>
+<tr>
+<td>1500W</td>
+<td style="text-align: right;">5.5 hours</td>
+</tr>
+<tr>
+<td>2000W</td>
+<td style="text-align: right;">4 hours</td>
+</tr>
+</tbody>
+</table>
+<p>These are theoretical estimates assuming a relatively constant load.</p>
+<p>Actual performance depends on inverter consumption, battery temperature, load peaks and the appliances being powered.</p>
+<h3 id="what-could-you-power">What could you power?<a class="headerlink" href="#what-could-you-power" title="Permanent link">¶</a></h3>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Appliance</th>
+<th style="text-align: right;">Typical consumption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Refrigerator</td>
+<td style="text-align: right;">100–200W average</td>
+</tr>
+<tr>
+<td>Freezer</td>
+<td style="text-align: right;">50–100W average</td>
+</tr>
+<tr>
+<td>Internet router</td>
+<td style="text-align: right;">10–20W</td>
+</tr>
+<tr>
+<td>LED lighting</td>
+<td style="text-align: right;">30–100W</td>
+</tr>
+<tr>
+<td>Television</td>
+<td style="text-align: right;">80–150W</td>
+</tr>
+<tr>
+<td>Laptop</td>
+<td style="text-align: right;">50–100W</td>
+</tr>
+<tr>
+<td>Desktop computer</td>
+<td style="text-align: right;">150–400W</td>
+</tr>
+<tr>
+<td>Circulation pump</td>
+<td style="text-align: right;">50–150W</td>
+</tr>
+</tbody>
+</table>
+<p>You should be able to run essential household equipment quite comfortably.</p>
+<p>However, I would not initially include electric heating, electric boilers, induction cooking or EV charging in the backup circuit.</p>
+<hr>
+<h1 id="7-estimated-component-costs">7. Estimated component costs<a class="headerlink" href="#7-estimated-component-costs" title="Permanent link">¶</a></h1>
+<p>Here is an initial shopping budget based on currently available European retail listings.</p>
+<p>These are indicative prices, not installation quotations.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align: right;">Quantity</th>
+<th style="text-align: right;">Estimated price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Victron MultiPlus-II 48/5000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">€700–1,050</td>
+</tr>
+<tr>
+<td>Pylontech US5000</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">€1,740–1,900</td>
+</tr>
+<tr>
+<td>Cerbo GX MK2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">€240–320</td>
+</tr>
+<tr>
+<td>Battery rack</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">€200–400</td>
+</tr>
+<tr>
+<td>DC distribution and protection</td>
+<td style="text-align: right;">1 set</td>
+<td style="text-align: right;">€250–450</td>
+</tr>
+<tr>
+<td>AC distribution and protection</td>
+<td style="text-align: right;">1 set</td>
+<td style="text-align: right;">€200–350</td>
+</tr>
+<tr>
+<td>Cables and connectors</td>
+<td style="text-align: right;">1 set</td>
+<td style="text-align: right;">€150–250</td>
+</tr>
+<tr>
+<td>Enclosure and mounting accessories</td>
+<td style="text-align: right;">1 set</td>
+<td style="text-align: right;">€150–250</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimated hardware total: €3,630–4,970.</strong></p>
+<p>This excludes installation, inspection and any necessary modifications to your existing electrical distribution board.</p>
+<h3 id="some-actual-products-to-investigate">Some actual products to investigate<a class="headerlink" href="#some-actual-products-to-investigate" title="Permanent link">¶</a></h3>
+<p><strong>Inverter</strong></p>
+<p>Victron MultiPlus-II 48/5000/70-50€708.58·uwsolarinstallatieshop + others4.8 (275)</p>
+<p><strong>Battery</strong></p>
+<p>Pylontech US5000 4.8kWh€869.99·reichelt.com + others5.0 (188)</p>
+<p><strong>Monitoring</strong></p>
+<p>Victron Cerbo GX€258.75·Bootschappen Watersport + others4.7 (119)</p>
+<p>The Cerbo GX can also be replaced by an appropriate MultiPlus-II GX variant, which integrates GX functionality.</p>
+<hr>
+<h1 id="8-preparing-for-solar-panels-later">8. Preparing for solar panels later<a class="headerlink" href="#8-preparing-for-solar-panels-later" title="Permanent link">¶</a></h1>
+<p>Although we aren't installing solar panels initially, I would design the installation with solar expansion in mind.</p>
+<p>The future architecture would look like this:</p>
+<div class="highlight"><pre><span></span><code>                 SOLAR PANELS
+                      |
+                      |
+                DC DISCONNECT
+                      |
+                      |
+                 MPPT CONTROLLER
+                      |
+                      |
+                      v
+              +---------------+
+              |               |
+              |  48V BATTERY  |
+              |               |
+              +-------+-------+
+                      |
+                      |
+                VICTRON INVERTER
+                      |
+                      |
+                  230V OUTPUT
+                      |
+                      |
+                HOUSEHOLD LOADS
+</code></pre></div>
+<p>This means you won't need to replace the original batteries or inverter.</p>
+<p>You simply add the solar panels, MPPT controller and associated protection.</p>
+<p>An alternative is to use a compatible AC-coupled solar inverter, depending on the final system design.</p>
+<hr>
+<h1 id="9-belgian-installation-requirements">9. Belgian installation requirements<a class="headerlink" href="#9-belgian-installation-requirements" title="Permanent link">¶</a></h1>
+<p>There is an important distinction between a completely isolated backup installation and an inverter/charger that remains connected to the public electricity network.</p>
+<p>Even if you intend to use the batteries only during power failures, the installation topology matters.</p>
+<p>For Belgium:</p>
+<ol>
+<li>The installation must comply with AREI.</li>
+<li>Grid-connected inverter equipment must meet applicable Synergrid requirements.</li>
+<li>The appropriate installation and inspection requirements must be followed.</li>
+<li>Registration with Fluvius may be required for the storage installation.</li>
+</ol>
+<p>Check the official resources:</p>
+<ul>
+<li><a href="https://www.synergrid.be/?utm_source=chatgpt.com">Synergrid C10/26 equipment list</a></li>
+<li><a href="https://www.fluvius.be/?utm_source=chatgpt.com">Fluvius battery information</a></li>
+<li><a href="https://www.victronenergy.com/inverters-chargers/multiplus-ii?utm_source=chatgpt.com">Victron MultiPlus-II technical documentation</a></li>
+</ul>
+<p>I would specifically ask the installer to confirm that the proposed MultiPlus-II configuration is permitted in Belgium before ordering the equipment.</p>
+<hr>
+<h1 id="10-three-things-i-would-like-to-establish-before-finalising-the-design">10. Three things I would like to establish before finalising the design<a class="headerlink" href="#10-three-things-i-would-like-to-establish-before-finalising-the-design" title="Permanent link">¶</a></h1>
+<p>There are three technical details that could significantly change the design and cost.</p>
+<h3 id="a-single-phase-or-three-phase-electricity">A. Single-phase or three-phase electricity?<a class="headerlink" href="#a-single-phase-or-three-phase-electricity" title="Permanent link">¶</a></h3>
+<p>This is particularly important in Belgium.</p>
+<p>Do you have:</p>
+<ul>
+<li>230V single-phase?</li>
+<li>3 × 230V?</li>
+<li>3 × 400V + N?</li>
+</ul>
+<p>You can find this on your electricity meter or electricity installation documentation.</p>
+<p>A single 48V MultiPlus-II provides single-phase 230V output. It does not independently provide a complete three-phase backup supply.</p>
+<h3 id="b-what-should-happen-during-a-power-failure">B. What should happen during a power failure?<a class="headerlink" href="#b-what-should-happen-during-a-power-failure" title="Permanent link">¶</a></h3>
+<p>My preferred solution is to have a dedicated backup distribution board.</p>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Circuit</th>
+<th>Backup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Refrigerator/freezer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Lighting</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Internet/network</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Television</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Computer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>General sockets</td>
+<td>Selected</td>
+</tr>
+<tr>
+<td>Washing machine</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Dishwasher</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Electric heating</td>
+<td>No</td>
+</tr>
+<tr>
+<td>EV charger</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively, we can investigate backing up the entire house, but this requires more careful power and phase calculations.</p>
+<h3 id="c-where-will-you-install-the-batteries">C. Where will you install the batteries?<a class="headerlink" href="#c-where-will-you-install-the-batteries" title="Permanent link">¶</a></h3>
+<ul>
+<li>Garage</li>
+<li>Basement</li>
+<li>Technical room</li>
+<li>Utility room</li>
+</ul>
+<p>This affects the battery enclosure, temperature requirements, cable routing and installation costs.</p>
+<hr>
+<h2 id="my-preferred-starting-configuration">My preferred starting configuration<a class="headerlink" href="#my-preferred-starting-configuration" title="Permanent link">¶</a></h2>
+<p>If the electrical supply allows it, I would start with:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battery</td>
+<td>2 × Pylontech US5000</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>9.6kWh nominal</td>
+</tr>
+<tr>
+<td>Inverter</td>
+<td>Victron MultiPlus-II 48/5000</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>Cerbo GX</td>
+</tr>
+<tr>
+<td>Battery rack</td>
+<td>Six-battery capacity</td>
+</tr>
+<tr>
+<td>Backup</td>
+<td>Dedicated essential-circuits distribution board</td>
+</tr>
+<tr>
+<td>Solar</td>
+<td>Prepared for future installation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The goal:</strong> Build a system once, start with approximately 10kWh, and expand to nearly 30kWh simply by adding batteries.</p>
+<p>The most important question now is whether your home has single-phase or three-phase electricity. That determines which inverter architecture I would choose.</p>
+<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=wqHAUnoCIQQ">Video Dead Simple Apocalypse Power: Build It in an Hour</a></li>
+<li><a href="https://willapproved.com/system-packages/handtruck-system-builder/">Details</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.indexes", "content.code.copy", "content.tabs.link", "search.highlight", "search.suggest", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
